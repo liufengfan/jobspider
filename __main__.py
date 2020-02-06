@@ -1,4 +1,7 @@
 from .engine import Job51Engine
+from .db.mysql import MySQLTool
+
+import time
 
 
 if __name__ == "__main__":
@@ -8,4 +11,8 @@ if __name__ == "__main__":
         url=url,
         keywords='java%2520web',
         pagenum=1)
+    start = time.time()
     job51.execute()
+    end = time.time()
+    print("总用时: {}".format(end-start))
+ 
